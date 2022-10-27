@@ -31,3 +31,50 @@ public class Zajecia {
 Regresja -
 Refaktoryzacja +
 */
+
+package com.mycompany.zajecia;
+
+import java.util.Random;
+
+public class Zajecia {
+    public static void main(String[] args) {
+        
+        Random dice = new Random();
+        Player player = new Player();
+        //player.setName(null);
+        
+        int number;
+        int guess;
+        do{
+        
+        number = dice.nextInt(6)+1;
+        System.out.println(number);
+        
+        guess = player.guess();
+        System.out.println(player.getName() + ": " + guess );
+        
+        if(guess == number){
+            System.out.println("Zgadles");
+        }else{
+            System.out.println("Nie zgadles");
+        }
+        }while(guess != number);
+    }
+}
+
+/*
+Przeciążanie operatorów - można nadać operatorom inne znaczenie
+
+
+Tak nie robić
+    String t = "TEST";
+t = t.toLowerCase();
+if(t = "test")
+    System.out.print("OK");
+else
+    System.out.print("NIE OK");
+
+nigdy nie stosować "==" do Stringów
+t.euquals() - to stosować
+częste pytanie na inżynierce: czym są i co robią konstruktory
+*/
