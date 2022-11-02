@@ -2,33 +2,10 @@ package com.mycompany.zajecia;
 
 import java.util.Random;
 
-public class Player {
-        
-        private Random brain = new Random();
-        private String name;
-        
-        public void setName(String name){
-            this.name = name;
-        }
-        
-        public String getName(){
-            return name;
-        }
-        
-        public int guess(){
-            return brain.nextInt(6)+1;
-        }
-        
-}
-/////
-package com.mycompany.zajecia;
-
-import java.util.Random;
-
 public class Player{
         
         private Random brain = new Random();
-        private String name = "Player"; // dobrze jest przypisać poprawną wartość i blokujemy niepoprawne wartości
+        private String name = "Player";
         
         public Player(){}
         public Player(String name){
@@ -36,7 +13,6 @@ public class Player{
         }
         
         public void setName(String name){
-            //if(name != null && !name.isEmpty()) //w tej kolejności metoda nie będzie wywoływana dla null, bo
             if(name != null && !name.isEmpty())
                 this.name = name;
             else
