@@ -1,10 +1,7 @@
 package com.mycompany.zajecia;
 
-import java.util.Random;
-
-public class Player{
-        
-        private Random brain = new Random();
+abstract public class Player{
+                
         private String name = "Player";
         
         public Player(){}
@@ -12,7 +9,11 @@ public class Player{
             setName(name);
         }
         
-        public void setName(String name){
+        public final String getName(){
+            return name;
+        }
+        
+        public final void setName(String name){
             if(name != null && name.matches("^[a-zA-Z\\d._\\-]{3,}$"))
                 this.name = name;
             else
@@ -20,17 +21,5 @@ public class Player{
                 throw new IllegalArgumentException("Niepoprawne imie");
         }
         
-        public String getName(){
-            return name;
-        }
-        
-        public int guess(){
-            return brain.nextInt(6)+1;
-        }
-        
+        abstract public int guess();
 }
-
-/*  REGEX - wyrażenia regularne
-    regex101.com
-    ^[a-zA-Z0-9.\-_+]{3,}$
-*/

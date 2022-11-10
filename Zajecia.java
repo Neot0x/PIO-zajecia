@@ -7,13 +7,8 @@ public class Zajecia {
         
         Random dice = new Random();
         
-        Player player;
-        
-        if(mode)
-            player = new PlayerHuman();
-        else
-            player = new Player();
-
+        Player player = new PlayerHuman();
+            
         int number;
         int guess;
         do{
@@ -32,3 +27,4 @@ public class Zajecia {
         }while(guess != number);
     }
 }
+//stategia wrorzec
