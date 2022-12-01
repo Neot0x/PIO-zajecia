@@ -14,7 +14,7 @@ public class Zajecia {
         System.out.println(list);
         System.out.println("----------");
                 
-        for(int i = 0; i < list.size(); i++){
+        /*for(int i = 0; i < list.size(); i++){
             System.out.println(list.get(i)) ;
         }
         
@@ -32,14 +32,17 @@ public class Zajecia {
             String el = it.next();
             System.out.println(el);
         }
-        */
+        
         for(Iterator<String> it = list.iterator(); it.hasNext();){
             System.out.println(it.next());
+        } */
+        
+        Game game = new Game();
+        
+        for(int i = 0; i<10; i++){
+            game.addPlayer(new PlayerComp("Stefan"));
         }
-        
-        /*Game game = new Game();
-        game.addPlayer(new PlayerComp());
-        game.play();*/
-        
+        //game.addPlayer(new PlayerComp("Ziutek"));
+        //game.play();
     }
 }
