@@ -2,10 +2,12 @@ package com.mycompany.zajecia;
 
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Game {
-    Random dice = new Random();
+    private Statistics statistics = new Statistics();
+    private Random dice = new Random();
     
     private Player player;
     private List<Player> players = new ArrayList<>();
@@ -20,6 +22,32 @@ public class Game {
         }
     }
 
+    public void printPlayers(){
+        System.out.println("-------");
+        players.forEach(player -> {System.out.println(player.getName());});
+            
+    }
+
+    public void removePlayer(String name){
+/*        for(int i=0; i < players.size(); ++i){
+            if(players.get(i).getName().equals(name)){
+                players.remove(i);
+                break;
+            }        
+
+        }*/
+
+        for(Iterator<Player> it=players.iterator(); it.hasNext();){
+            if(it.next().getName().equals(name)){
+                it.remove();
+                break;
+            }
+        }
+
+//        players.removeIf( player -> player.getName().equals(name)); //zawsze przejży całość
+
+    }
+
     private boolean nameExists(String name){
         for(Player player : players){
             if(player.getName().equals(name)){
@@ -28,7 +56,7 @@ public class Game {
         }
         return false;
     }
-    
+ 
     public void play(){
 
         int number;
@@ -47,12 +75,15 @@ public class Game {
             if(guess == number){
                 System.out.println("Zgadles");
                 repeat = false;
+                statistics.winner(player);
             }else{
                 System.out.println("Nie zgadles");
             }
             }
         }while(repeat);
     }
+
+    public void printStats(){
+        statistics.print();
+    }
 }
-// wzorzec nullobject
-// zastanowić się w jaki sposób usuwać graczy o danym imieniu 
