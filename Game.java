@@ -1,17 +1,31 @@
 package com.mycompany.zajecia;
 
+import com.mycompany.zajecia.players.Player;
+import com.mycompany.zajecia.statistics.Statistics;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class Game {
-    private Statistics statistics = new Statistics();
+    private Statistics statistics;
     private Random dice = new Random();
     
     private Player player;
     private List<Player> players = new ArrayList<>();
-      
+    
+    public Game(){
+        this(null);
+    }
+    
+    public Game(Statistics statistics){
+        if(statistics != null)
+            this.statistics = statistics;
+        else
+            this.statistics = NullStatistics();
+        
+    }
+
     public void addPlayer(Player player){
         if(nameExists(player.getName())){
             player.setName(player.getName() + dice.nextInt(10));
@@ -34,7 +48,6 @@ public class Game {
                 players.remove(i);
                 break;
             }        
-
         }*/
 
         for(Iterator<Player> it=players.iterator(); it.hasNext();){
@@ -86,4 +99,5 @@ public class Game {
     public void printStats(){
         statistics.print();
     }
+
 }

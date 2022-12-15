@@ -1,9 +1,11 @@
 package com.mycompany.zajecia;
 
+import com.mycompany.zajecia.players.PlayerComp;
+
 public class Zajecia {
     public static void main(String[] args) {
 
-        Game game = new Game();
+        Game game = new Game(null); //wstrzykiwanie zależności
         
         game.addPlayer(new PlayerComp("Stefan"));
         game.addPlayer(new PlayerComp("Krycha"));
