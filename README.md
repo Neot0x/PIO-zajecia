@@ -6,3 +6,5 @@ Program "gra w kości" : players, statistics, Game.java, Player.java, PlayerComp
 Pogram "product" ćwiczenia przed kolokwium: Cart.java, Kolos.java, Product.java
 
 Program szyfrujący: Szyfrowanie.java
+
+Program rectangle_exercise: Main.java, Rectangle.java
