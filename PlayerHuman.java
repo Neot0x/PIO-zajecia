@@ -8,7 +8,7 @@ public class PlayerHuman extends Player{
     
     public PlayerHuman(){}
     public PlayerHuman(String name){
-        super(name);    //wywołuje konstruktor klasy nadrzędnej, musi być pierszy nad wszystkim
+        super(name);    
     }
     
     public int guess(){
